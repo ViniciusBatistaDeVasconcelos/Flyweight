@@ -11,9 +11,9 @@ public class FilialFactory {
         return instance;
     }
 
-    private static Map<String, Filial> filiais = new HashMap<>();
+    private Map<String, Filial> filiais = new HashMap<>();
 
-    public static Filial getFilial(String codigo, String nome) {
+    public Filial getFilial(String codigo, String nome) {
         Filial filial = filiais.get(codigo);
 
         if (filial == null) {
@@ -23,11 +23,11 @@ public class FilialFactory {
         return filial;
     }
 
-    public static int getTotalFiliais() {
+    public int getTotalFiliais() {
         return filiais.size();
     }
 
-    public static void setListaVazia() {
+    public void setListaVazia() {
         filiais.clear();
     }
 }

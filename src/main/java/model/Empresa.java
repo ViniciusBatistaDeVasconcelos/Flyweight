@@ -9,7 +9,7 @@ public class Empresa {
     public void cadastrar(String nomeFuncionario, String cpfFuncionario,
                           String codigoFilial, String nomeFilial) {
 
-        Filial filial = FilialFactory.getFilial(codigoFilial, nomeFilial);
+        Filial filial = FilialFactory.getInstance().getFilial(codigoFilial, nomeFilial);
         Funcionario funcionario = new Funcionario(nomeFuncionario, cpfFuncionario, filial);
         funcionarios.add(funcionario);
     }

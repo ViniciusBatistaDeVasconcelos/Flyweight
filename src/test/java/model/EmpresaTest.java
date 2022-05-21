@@ -11,7 +11,7 @@ class EmpresaTest {
 
     @BeforeEach
     void limparFiliais() {
-        FilialFactory.setListaVazia();
+        FilialFactory.getInstance().setListaVazia();
     }
 
     @Test
@@ -37,7 +37,7 @@ class EmpresaTest {
 
     @Test
     void deveRetornarTotalCidadesIgualAZero() {
-        assertEquals(0, FilialFactory.getTotalFiliais());
+        assertEquals(0, FilialFactory.getInstance().getTotalFiliais());
     }
 
     @Test
@@ -45,7 +45,7 @@ class EmpresaTest {
         Empresa empresa = new Empresa();
         empresa.cadastrar("Adriana", "186.221.660-66", "MG0001", "Centro de distribuição - Juiz de Fora");
 
-        assertEquals(1, FilialFactory.getTotalFiliais());
+        assertEquals(1, FilialFactory.getInstance().getTotalFiliais());
     }
 
     @Test
@@ -57,6 +57,6 @@ class EmpresaTest {
         empresa.cadastrar("Ana Maria", "639.552.250-70", "MG0002", "Centro de distribuição - Viçosa");
         empresa.cadastrar("Beatriz", "094.389.290-29", "MG0003", "Centro de distribuição - Belo Horizonte");
 
-        assertEquals(3, FilialFactory.getTotalFiliais());
+        assertEquals(3, FilialFactory.getInstance().getTotalFiliais());
     }
 }
